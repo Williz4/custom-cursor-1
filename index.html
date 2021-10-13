@@ -1,0 +1,41 @@
+<<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Custom Cursor | 1</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+	</head>
+
+	<body>
+
+		<div class="cursor"></div>
+
+		<script>
+			
+			const cursor = document.querySelector('.cursor');
+
+			document.addEventListener('mousemove', e => {
+				console.log(e);
+				cursor.setAttribute('style', 'top:' +(e.pageY - 10)+'px; left: '+(e.pageX - 10)+"px;");
+			});
+
+			document.addEventListener('click', ()=> {
+				cursor.classList.add('expand');
+
+				setTimeout(() => {
+					cursor.classList.remove('expand');
+				}, 500);
+			});
+
+		</script>
+
+	</body>
+
+</html>
